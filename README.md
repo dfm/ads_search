@@ -1,6 +1,8 @@
 Usage:
 
+```
 dfm.github.com/ads_search?ads={query}
+```
 
 where {query} is something like:
 

@@ -10,13 +10,14 @@
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+  
   <title></title>
   <meta name="description" content="ads_search">
   <meta name="author" content="">
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="favicon.ico">
@@ -45,7 +46,7 @@
     <div id="main" role="main">
         <div id="title">ADS Search Tool</div>
         <form method="get" accept-charset="utf-8" name="searchform">
-            <p><input type="text" name="ads" size="20"></input></p>
+            <p><input type="text" name="ads" size="20" autofocus></input></p>
             <p><a href="javascript:document.searchform.submit();" class="button powerpack" title="dfm">Find it!</a></p>
         </form>
     </div>

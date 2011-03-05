@@ -1,104 +1,95 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>ADS Search</title>
-    <meta name="generator" content="TextMate http://macromates.com/">
-    <meta name="author" content="Dan F-M">
-    <!-- Date: 2011-03-05 -->
+  <meta charset="utf-8">
 
-    <script> 
-        function getQueryVariable(variable) { 
-            var query = window.location.search.substring(1);
-            var vars = query.split("&");
-            for (var i=0;i<vars.length;i++) {
-                var pair = vars[i].split("=");
-                if (pair[0] == variable) { 
-                    return pair[1];
-                }
-            }
-            return -1;
-        }
-        
-        function getSearchString() {
-            var ads = getQueryVariable("ads");
-            if (ads != -1) {
-                return parseSearchString(ads);
-            }
-            
-            var arxiv = getQueryVariable("arxiv");
-            if (arxiv != -1) {
-                return parseSearchString(arxiv);
-            }
-            
-            return -1;
-        }
-        
-        function parseSearchString(searchstr) {
-            au = [];
-            yr = [];
-            aut_logic = "AND";
-            searcharr = unescape(searchstr).split(" ");
-            for (var i = 0; i < searcharr.length; i++) {
-                if (searcharr[i].search("20") != -1 || searcharr[i].search("19") != -1) {
-                    yr.push(searcharr[i]);
-                } else if (searcharr[i].toLowerCase().search("and") != -1) {
-                    aut_logic = "AND";
-                } else if (searcharr[i].toLowerCase().search("or") != -1) {
-                    aut_logic = "OR";
-                } else {
-                    au.push(searcharr[i]);
-                }
-            }
-            return [aut_logic,au,yr.sort()]
-        }
-    </script>
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="ads_search">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
+  
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="style.css?v=2">
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="libs/modernizr-1.7.min.js"></script>
 
 </head>
+
 <body>
 
-<script>
-    searchres = getSearchString();
-    
-    if (searchres != -1) {
-        aut_logic = searchres[0];
-        au = searchres[1];
-        yr = searchres[2];
+  <div id="container">
+    <header>
+    </header>
+    <div id="main" role="main">
+        <div id="title">ADS Search Tool</div>
+        <form method="get" accept-charset="utf-8" name="searchform">
+            <p><input type="text" name="ads" size="30"></input></p>
+            <p><a href="javascript:document.searchform.submit();" class="button powerpack" title="dfm">Find it!</a></p>
+        </form>
+    </div>
+    <footer>
         
-        start = "";
-        end   = "";
-        
-        if (yr.length >= 1) {
-            start = yr[0];
-            if (yr.length >= 2) {
-                end = yr[1];
-            } else {
-                end = start;
-            }
-        }
-        
-        document.write('Searching for papers by:<br />');
-        author = ""
-        for (var i = 0; i < au.length; i++) {
-            author += au[i]+"\r\n";
-            document.write(au[i]);
-            if (i < au.length-1) {
-                document.write(" "+aut_logic);
-            }
-            document.write("<br />");
-        }
-        author = escape(author);
-        if (start != "") {
-            document.write("Between: "+start+" and "+end);
-        }
-        
-        window.location = "http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?db_key=AST&db_key=PRE&qform=AST&arxiv_sel=astro-ph&arxiv_sel=cond-mat&arxiv_sel=cs&arxiv_sel=gr-qc&arxiv_sel=hep-ex&arxiv_sel=hep-lat&arxiv_sel=hep-ph&arxiv_sel=hep-th&arxiv_sel=math&arxiv_sel=math-ph&arxiv_sel=nlin&arxiv_sel=nucl-ex&arxiv_sel=nucl-th&arxiv_sel=physics&arxiv_sel=quant-ph&arxiv_sel=q-bio&sim_query=YES&ned_query=YES&adsobj_query=YES&aut_logic="+aut_logic+"&obj_logic=OR&author="+author+"&object=&start_mon=&start_year="+start+"&end_mon=&end_year="+end+"&ttl_logic=OR&title=&txt_logic=OR&text=&nr_to_return=200&start_nr=1&jou_pick=ALL&ref_stems=&data_and=ALL&group_and=ALL&start_entry_day=&start_entry_mon=&start_entry_year=&end_entry_day=&end_entry_mon=&end_entry_year=&min_score=&sort=SCORE&data_type=SHORT&aut_syn=YES&ttl_syn=YES&txt_syn=YES&aut_wt=1.0&obj_wt=1.0&ttl_wt=0.3&txt_wt=3.0&aut_wgt=YES&obj_wgt=YES&ttl_wgt=YES&txt_wgt=YES&ttl_sco=YES&txt_sco=YES&version=1";
-    } else {
-        document.write("Usage: "+window.location+"?ads={query}");
+    </footer>
+  </div> <!--! end of #container -->
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write(unescape('%3Cscript src="libs/jquery-1.5.1.js"%3E%3C/script%3E'))</script>
+
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <!-- <script src="js/script.js"></script> -->
+  <script src="mylibs/ads_search.js"></script>
+  <!-- end scripts-->
+
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+
+  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+  <script>
+    var _gaq=[['_setAccount','UA-21853364-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  
+  <!-- Do the search -->
+  <script>
+    adsurl = getADSURL();
+    if (adsurl != -1) {
+        window.location = adsurl;
     }
-    
-</script>
+  </script>
+
 
 </body>
 </html>

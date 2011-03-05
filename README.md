@@ -36,3 +36,7 @@ You can also include ```or``` anywhere in the search phrase to change the logic:
 widrow or courteau 1991 2007
 ```
 
+I recommend using this with [Alfred](http://www.alfredapp.com/)'s  on your Mac.
+
+Inspired by: [Jonathan Sick](http://jonathansick.tumblr.com/post/3653286236/nasa-ads-searches-with-alfred).
+

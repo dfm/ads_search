@@ -43,8 +43,12 @@ function parseSearchString(searchstr) {
     return [aut_logic,au,yr.sort()]
 }
 
-function getADSURL() {
-    searchres = getSearchString();
+function getADSURL(searchres) {
+    if (searchres == 0) {
+        searchres = getSearchString();
+    } else {
+        searchres = parseSearchString(searchres);
+    }
     
     if (searchres != -1) {
         aut_logic = searchres[0];
@@ -82,4 +86,14 @@ function getADSURL() {
     }
     
     return -1;
+}
+
+function doADSSearch(flag) {
+    if (flag == 1) {
+        flag = document.searchform.ads.value;
+    }
+    adsurl = getADSURL(flag);
+    if (adsurl != -1) {
+        window.location = adsurl;
+    }
 }

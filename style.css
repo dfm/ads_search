@@ -183,12 +183,16 @@ body {
     padding:15px 40px 10px 40px;
 }
 
-#main {
-    margin-top: 50px;
+#container {
+    margin-top: 25px;
     text-align:center;
 }
 
 p + p { margin-top: 20px; }
+
+footer {
+    margin-top: 20px;
+}
 
 input[type="text"] { 
     background:#fff;
@@ -224,7 +228,6 @@ a:visited {
 a:hover, 
 a:focus {
     color:#1b062a; /* dark purple */
-    /*border-bottom: 1px solid;*/
     text-decoration:none;
 }
 
@@ -249,29 +252,14 @@ a.button {
     -moz-border-radius:30px;
     -webkit-border-radius:30px;
 }
-/* Alfred button - Purple */
-.button.alfred {
-    background:#853eb7;
-    background:-webkit-gradient(linear, left top, left bottom, from(#853eb7), to(#511f75));
-    background:-moz-linear-gradient(top,  #853eb7,  #511f75);
-    border:1px solid #401063;
-}
-.button.alfred:hover {
-    background:#511f75;
-    background:-webkit-gradient(linear, left top, left bottom, from(#853eb7), to(#511f75));
-    background:-moz-linear-gradient(top,  #853eb7,  #511f75);
-    box-shadow:0 0 10px #210634;
-    -webkit-box-shadow:0 0 10px #210634;
-    -moz-box-shadow:0 0 10px #210634;
-}
-/* Powerpack button - Turquiose */
-.button.powerpack {
+/* Turquiose button */
+.button.findit {
     background:#4bacbc;
     background:-webkit-gradient(linear, left top, left bottom, from(#2c95af), to(#1f6d81));
     background:-moz-linear-gradient(top,  #2c95af,  #1f6d81);
     border:1px solid #013942;
 }
-.button.powerpack:hover {
+.button.findit:hover {
     background:#1f6d81;
     background:-webkit-gradient(linear, left top, left bottom, from(#2c95af), to(#1f6d81));
     background:-moz-linear-gradient(top,  #2c95af,  #1f6d81);
@@ -279,21 +267,6 @@ a.button {
     -webkit-box-shadow:0 0 10px #210634;
     -moz-box-shadow:0 0 10px #210634;
 }
-/* Disabled button */
-.button.disabled {
-    background:#e9e9e9;
-    border:1px solid #e9e9e9;
-    color:#f2f2f2 !important;
-    text-shadow: none;
-}
-.button.disabled:hover {
-    background:#e9e9e9;
-    border:1px solid #e9e9e9;
-    color:#f2f2f2 !important;
-    -webkit-box-shadow:none !important;
-    -moz-box-shadow:none !important;
-}
-
 
 
 

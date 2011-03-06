@@ -39,14 +39,16 @@
 </head>
 
 <body>
+    
+  <script src="mylibs/ads_search.js"></script>
 
   <div id="container">
     <header>
     </header>
     <div id="main" role="main">
         <div id="title">ADS Search Tool</div>
-        <form method="get" accept-charset="utf-8" name="searchform">
-            <p><input type="text" name="ads" size="20" autofocus></input></p>
+        <form action="javascript:doADSSearch(1);" method="get" accept-charset="utf-8" name="searchform">
+            <p><input type="text" name="ads" size="20"></input></p>
             <p><a href="javascript:document.searchform.submit();" class="button powerpack" title="dfm">Find it!</a></p>
         </form>
     </div>
@@ -65,7 +67,6 @@
 
   <!-- scripts concatenated and minified via ant build script-->
   <!-- <script src="js/script.js"></script> -->
-  <script src="mylibs/ads_search.js"></script>
   <!-- end scripts-->
 
 
@@ -85,10 +86,7 @@
   
   <!-- Do the search -->
   <script>
-    adsurl = getADSURL();
-    if (adsurl != -1) {
-        window.location = adsurl;
-    }
+    doADSSearch(0);
   </script>
 
 

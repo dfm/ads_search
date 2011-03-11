@@ -27,14 +27,14 @@ function getSearchString() {
 function parseSearchString(searchstr) {
     au = [];
     yr = [];
-    aut_logic = "AND";
+    aut_logic = "AND"; // default logic
     searcharr = unescape(searchstr).split(/[\s+]/g);
     for (var i = 0; i < searcharr.length; i++) {
         if (searcharr[i].search("20") != -1 || searcharr[i].search("19") != -1) {
             yr.push(searcharr[i]);
-        } else if (searcharr[i].toLowerCase().search("and") != -1) {
+        } else if (searcharr[i].toLowerCase() == "and") {
             aut_logic = "AND";
-        } else if (searcharr[i].toLowerCase().search("or") != -1) {
+        } else if (searcharr[i].toLowerCase() == "or") {
             aut_logic = "OR";
         } else {
             au.push(searcharr[i]);

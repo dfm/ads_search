@@ -152,7 +152,8 @@ body, select, input, textarea {
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
   color: #444;
   /* Set your base font here, to apply evenly */
-  /* font-family: Georgia, serif;  */
+  font-family: 'helvetica neue', Helvetica, Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+  font-size:24px;
 }
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
@@ -173,10 +174,8 @@ body {
 }
 
 #title {
-    font-family: 'Copse','Bevan', Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
     display:inline-block;
     font-size:24px;
-    letter-spacing:2px;
     line-height:24px;
     text-align:center;
     margin-bottom:20px;
@@ -192,6 +191,7 @@ p + p { margin-top: 20px; }
 
 footer {
     margin-top: 20px;
+    font-size:12px;
 }
 
 input[type="text"] { 
@@ -199,7 +199,7 @@ input[type="text"] {
     border:0;
     color:#3a3939;
     font-size:24px;
-    padding:10px;
+    padding:12px;
     text-align:center;
     vertical-align:middle;
     /* CSS3 Properties */
@@ -305,52 +305,4 @@ a.button {
 .clearfix:after { clear: both; }
 /* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
 .clearfix { zoom: 1; }
-
-
-
-/**
- * Media queries for responsive design.
- *
- * These follow after primary styles so they will successfully override.
- */
-
-@media all and (orientation:portrait) {
-  /* Style adjustments for portrait mode goes here */
-
-}
-
-@media all and (orientation:landscape) {
-  /* Style adjustments for landscape mode goes here */
-
-}
-
-/* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome)
-   consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
-@media screen and (max-device-width: 480px) {
-
-
-  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
-  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
-}
-
-
-/**
- * Print styles.
- *
- * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
- */
-@media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
-  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
-  a, a:visited { color: #444 !important; text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
-  tr, img { page-break-inside: avoid; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3{ page-break-after: avoid; }
-}
 

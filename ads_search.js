@@ -16,10 +16,11 @@ function getSearchString() {
         return parseSearchString(ads);
     }
     
-    var arxiv = getQueryVariable("arxiv");
-    if (arxiv != -1) {
-        return parseSearchString(arxiv);
-    }
+    // not implemented
+    // var arxiv = getQueryVariable("arxiv");
+    // if (arxiv != -1) {
+    //     return parseSearchString(arxiv);
+    // }
     
     return -1;
 }
@@ -28,22 +29,28 @@ function parseSearchString(flag) {
     au = [];
     yr = [];
     
-    // parse years
-    y1 = document.searchform.year1.value;
-    y2 = document.searchform.year2.value;
-    if (y1 != "") {
-        yr.push(y1);
-    }
-    if (y2 != "") {
-        yr.push(y2);
+    if (flag == 1) {
+        // parse years
+        y1 = document.searchform.year1.value;
+        y2 = document.searchform.year2.value;
+        if (y1 != "") {
+            yr.push(y1);
+        }
+        if (y2 != "") {
+            yr.push(y2);
+        }
+        searchstr = document.searchform.author.value;
+    } else {
+        searchstr = flag;
     }
     
     // parse authors
     aut_logic = "AND"; // default logic
-    searchstr = document.searchform.author.value;
     searcharr = unescape(searchstr).split(/[\s+]/g);
     for (var i = 0; i < searcharr.length; i++) {
-        if (searcharr[i].toLowerCase() == "and") {
+        if (flag != 1 && (searcharr[i].search("20") != -1 || searcharr[i].search("19") != -1)) {
+             yr.push(searcharr[i]);
+        } else if (searcharr[i].toLowerCase() == "and") {
             aut_logic = "AND";
         } else if (searcharr[i].toLowerCase() == "or") {
             aut_logic = "OR";

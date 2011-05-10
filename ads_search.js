@@ -24,15 +24,26 @@ function getSearchString() {
     return -1;
 }
 
-function parseSearchString(searchstr) {
+function parseSearchString(flag) {
     au = [];
     yr = [];
+    
+    // parse years
+    y1 = document.searchform.year1.value;
+    y2 = document.searchform.year2.value;
+    if (y1 != "") {
+        yr.push(y1);
+    }
+    if (y2 != "") {
+        yr.push(y2);
+    }
+    
+    // parse authors
     aut_logic = "AND"; // default logic
+    searchstr = document.searchform.author.value;
     searcharr = unescape(searchstr).split(/[\s+]/g);
     for (var i = 0; i < searcharr.length; i++) {
-        if (searcharr[i].search("20") != -1 || searcharr[i].search("19") != -1) {
-            yr.push(searcharr[i]);
-        } else if (searcharr[i].toLowerCase() == "and") {
+        if (searcharr[i].toLowerCase() == "and") {
             aut_logic = "AND";
         } else if (searcharr[i].toLowerCase() == "or") {
             aut_logic = "OR";
@@ -43,11 +54,11 @@ function parseSearchString(searchstr) {
     return [aut_logic,au,yr.sort()]
 }
 
-function getADSURL(searchres) {
-    if (searchres == 0) {
+function getADSURL(flag) {
+    if (flag == 0) {
         searchres = getSearchString();
     } else {
-        searchres = parseSearchString(searchres);
+        searchres = parseSearchString(flag);
     }
     
     if (searchres != -1) {
@@ -80,9 +91,9 @@ function getADSURL(searchres) {
 }
 
 function doADSSearch(flag) {
-    if (flag == 1) {
-        flag = document.searchform.ads.value;
-    }
+    //if (flag == 1) {
+    //    flag = document.searchform.ads.value;
+    //}
     adsurl = getADSURL(flag);
     if (adsurl != -1) {
         window.location = adsurl;

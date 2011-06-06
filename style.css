@@ -192,6 +192,7 @@ body {
     font-size: 24pt;
     margin-top: 100px;
     text-align:center;
+    line-height: 36pt;
 }
 
 p + p { margin-top: 20px; }
@@ -222,10 +223,7 @@ input[type="text"] {
 
 /* buttons from: alfredapp.com site */
 
-/*= Link styles 
-For better usablity we remove the default underlining and use a border bottom to not cut off the decenders of the type
-------------------------------------------------------------------------------------------- */
-
+/*= Link styles */
 a:link,
 a:visited {
   color: #5c1f87; /* purple */

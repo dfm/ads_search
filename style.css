@@ -187,6 +187,13 @@ body {
     text-align:center;
 }
 
+#loading {
+    font-family: 'Bevan', Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+    font-size: 24pt;
+    margin-top: 100px;
+    text-align:center;
+}
+
 p + p { margin-top: 20px; }
 
 footer {
@@ -288,6 +295,7 @@ a.button {
 /* Hide for both screenreaders and browsers:
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
 .hidden { display: none; visibility: hidden; }
+.unhidden { display: show; visibility: visible; }
 
 /* Hide only visually, but have it available for screenreaders: by Jon Neal.
   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */

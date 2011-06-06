@@ -32,9 +32,7 @@
 
         <script src="ads_search.js"></script>
 
-        <div id="container">
-            <header>
-            </header>
+        <div id="container" class="hidden">
             <div id="main" role="main">
                 <div id="title">ADS Search Tool</div>
                 <form action="javascript:doADSSearch(1);" method="get" accept-charset="utf-8" name="searchform">
@@ -59,6 +57,13 @@
                 <p>
             </footer>
         </div> <!--! end of #container -->
+
+        <div id="placeholder">
+            <div id="loading">
+                Loading ADS results.<br />
+                Please be patient...
+            </div>
+        </div> <!--! end of #placehoder -->
 
         <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
         <script>

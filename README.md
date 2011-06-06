@@ -38,5 +38,5 @@ widrow or courteau 1991 2007
 
 I recommend using this with [Alfred](http://www.alfredapp.com/)'s custom search on your Mac.
 
-Inspired by: [Jonathan Sick](http://jonathansick.tumblr.com/post/3653286236/nasa-ads-searches-with-alfred).
+Inspired by: [Jonathan Sick](http://jonathansick.tumblr.com/post/3661681242/even-better-nasa-ads-searches-with-alfred).
 

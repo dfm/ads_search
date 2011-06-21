@@ -36,6 +36,12 @@ You can also include ```or``` anywhere in the search phrase to change the logic:
 widrow or courteau 1991 2007
 ```
 
+You can include a ```^``` before one of the names to search for publications with that person as first author only:
+
+```
+^courteau 2001 2007
+```
+
 I recommend using this with [Alfred](http://www.alfredapp.com/)'s custom search on your Mac.
 
 Inspired by: [Jonathan Sick](http://jonathansick.tumblr.com/post/3661681242/even-better-nasa-ads-searches-with-alfred).

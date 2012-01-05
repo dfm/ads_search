@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>ADS Search</title>
+    <meta name="description" content="An interface to search ADS easily">
+    <meta name="author" content="Dan F-M">
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
+
+    <!-- CSS: implied media="all" -->
+    <link rel="stylesheet" href="style.css?v=1">
+
+</head>
+    <body>
+
+        <div id="container">
+            <div id="main" role="main">
+                <div id="title">ADS Search Tool</div>
+                <form action=".." method="get" accept-charset="utf-8" name="searchform">
+                    <p>
+                        <input type="text" name="ads" size="30" placeholder='Query: Smith "Doe, J" 1999 2012'></input>
+                    </p>
+                    <p><a href="javascript:document.searchform.submit();" class="button findit" title="dfm">Find it!</a></p>
+                </form>
+            </div>
+            <footer>
+                <p>
+                    <small>
+                        By <a href="http://www.danfm.ca">Dan F-M</a> with help from
+                        <a href="https://github.com/paulirish/html5-boilerplate">HTML5-boilerplate</a>
+                        and <a href="http://jonathansick.tumblr.com/">Jonathan Sick</a>
+                    <small>
+                <p>
+            </footer>
+        </div> <!--! end of #container -->
+
+    </body>
+</html>

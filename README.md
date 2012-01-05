@@ -47,7 +47,9 @@ Finally, you must quote any multi-word names as follows
 ```
 "^de lucia" 2006
 ```
+
 or
+
 ```
 "Widrow, L" 2011
 ```

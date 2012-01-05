@@ -22,7 +22,7 @@ will search for papers by Widrow and Courteau in 2007.  You can also search betw
 widrow courteau 1986 2011
 ```
 
-which is equivalent to 
+which is equivalent to
 
 ```
 2011 widrow courteau 1986
@@ -40,6 +40,16 @@ You can include a ```^``` before one of the names to search for publications wit
 
 ```
 ^courteau 2001 2007
+```
+
+Finally, you must quote any multi-word names as follows
+
+```
+"^de lucia" 2006
+```
+or
+```
+"Widrow, L" 2011
 ```
 
 I recommend using this with [Alfred](http://www.alfredapp.com/)'s custom search on your Mac.
